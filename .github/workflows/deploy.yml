@@ -1,0 +1,41 @@
+name: Deploy a VPS
+
+# Cada push a main dispara un redeploy de capacitacion.cruza.pet.
+# El runner solo GATILLA: se conecta por SSH con una deploy key encadenada a un
+# forced command en el VPS, que hace `git pull` del repo publico y recarga nginx.
+# El runner nunca transfiere archivos ni puede correr comandos arbitrarios.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+# Nunca correr dos deploys en paralelo; el ultimo gana.
+concurrency:
+  group: deploy-vps
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Trigger deploy on VPS over SSH
+        env:
+          SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
+          KNOWN_HOSTS: ${{ secrets.VPS_KNOWN_HOSTS }}
+          TARGET: ${{ secrets.VPS_SSH_TARGET }}
+        run: |
+          install -d -m 700 ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+          # La deploy key tiene forced command en el VPS: corra lo que corra,
+          # solo ejecuta el script de deploy. Por eso no pasamos comando.
+          ssh -i ~/.ssh/deploy_key \
+              -o IdentitiesOnly=yes \
+              -o BatchMode=yes \
+              -o UserKnownHostsFile=~/.ssh/known_hosts \
+              "$TARGET"
