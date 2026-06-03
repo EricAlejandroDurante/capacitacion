@@ -4,3 +4,6 @@
 
 # Config local de deploy (host del VPS) — privado, no versionar
 deploy.env
+
+# Dependencias del run-skill driver (Playwright) — se reinstalan con npm install
+node_modules/

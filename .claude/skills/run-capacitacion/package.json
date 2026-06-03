@@ -1,0 +1,10 @@
+{
+  "name": "run-capacitacion-driver",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Headless-Chromium driver to render and screenshot the capacitacion.cruza.pet static page.",
+  "dependencies": {
+    "playwright": "^1.49.0"
+  }
+}
