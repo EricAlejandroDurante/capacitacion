@@ -1,0 +1,4 @@
+# Toda la base de código requiere review/aprobación de Eric.
+# Combinado con la protección de `main` (require_code_owner_reviews),
+# ningún PR se mergea a main sin su aprobación.
+* @EricAlejandroDurante

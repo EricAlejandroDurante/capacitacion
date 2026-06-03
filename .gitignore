@@ -1,0 +1,6 @@
+.DS_Store
+*.log
+*.swp
+
+# Config local de deploy (host del VPS) — privado, no versionar
+deploy.env

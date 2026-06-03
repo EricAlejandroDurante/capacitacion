@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Capacitación para líderes y subgerencia — Cruza." />
+  <meta name="robots" content="noindex" />
+  <title>Capacitación · Cruza</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      /* Paleta corporativa cruza.pet */
+      --black: #0a0a0a;
+      --black-soft: #1a1a2e;
+      --gray-dark: #2d2d3f;
+      --gray-medium: #6b7280;
+      --gray-light: #e5e7eb;
+      --smoke: #f8f9fa;
+      --white: #ffffff;
+      --accent: #8b5cf6; /* Atención / morado corporativo */
+      --accent-soft: #f5f3ff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      font-family: "Raleway", system-ui, -apple-system, sans-serif;
+      font-weight: 300;
+      color: var(--white);
+      background:
+        radial-gradient(1200px 600px at 70% -10%, rgba(139, 92, 246, 0.18), transparent 60%),
+        linear-gradient(160deg, var(--black) 0%, var(--black-soft) 55%, var(--gray-dark) 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 640px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c4b5fd;
+      background: rgba(139, 92, 246, 0.12);
+      border: 1px solid rgba(139, 92, 246, 0.35);
+      border-radius: 999px;
+      padding: 0.4rem 0.9rem;
+      margin-bottom: 2rem;
+    }
+
+    .badge .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.2);
+    }
+
+    h1 {
+      font-weight: 300;
+      font-size: clamp(2.4rem, 7vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.1rem;
+    }
+
+    h1 strong {
+      font-weight: 600;
+    }
+
+    .subtitle {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: var(--gray-light);
+      max-width: 46ch;
+      margin: 0 auto 2.5rem;
+      line-height: 1.6;
+    }
+
+    .meta {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 0.9rem;
+      justify-content: center;
+      font-size: 0.95rem;
+      color: var(--gray-medium);
+    }
+
+    .meta span {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 0.5rem 0.9rem;
+      color: var(--gray-light);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--gray-medium);
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    footer a {
+      color: #c4b5fd;
+      text-decoration: none;
+    }
+
+    footer a:hover,
+    footer a:focus {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="card">
+      <span class="badge"><span class="dot" aria-hidden="true"></span>En preparación</span>
+      <h1>Capacitación de <strong>líderes</strong></h1>
+      <p class="subtitle">
+        Espacio de trabajo para la jornada de capacitación de subgerencia y líderes
+        de equipo. El material y la agenda se publicarán acá pronto.
+      </p>
+      <div class="meta">
+        <span>Subgerencia y líderes</span>
+        <span>Sesión presencial</span>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <a href="https://cruza.pet">cruza.pet</a> · capacitacion.cruza.pet
+  </footer>
+</body>
+</html>
